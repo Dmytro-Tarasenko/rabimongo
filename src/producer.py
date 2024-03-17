@@ -12,6 +12,11 @@ def main():
                 routing_key='avg_price',
                 body=str(query_result).encode())
     
+    channel.queue_declare(queue='sms')
+    channel.basic_publish(exchange='',
+                routing_key='avg_price',
+                body=str(query_result).encode())
+    
     connection.close()
 
 if __name__ == '__main__':
