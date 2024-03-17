@@ -6,4 +6,4 @@ if __name__ == '__main__':
     # create_models()
     # import_data()
     select_all_authors_and_book_count()
-    select_avg_price_per_author()
+    print(select_avg_price_per_author())

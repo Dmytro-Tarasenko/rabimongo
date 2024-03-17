@@ -33,5 +33,4 @@ def select_avg_price_per_author():
                 .join(Book)\
                 .group_by(Author.author_id)\
                 .all()
-        for row in result:
-            print(row)
+        return result
