@@ -1,0 +1,21 @@
+{
+  "authors": [
+    {"author_id": 1, "author_name": "J.D. Salinger"},
+    {"author_id": 2, "author_name": "Harper Lee"},
+    {"author_id": 3, "author_name": "George Orwell"},
+    {"author_id": 4, "author_name": "Jane Austen"},
+    {"author_id": 5, "author_name": "F. Scott Fitzgerald"}
+  ],
+  "books": [
+    {
+      "book_id": 1, "title": "The Catcher in the Rye", "author_id": 1, "genre": "Fiction", "publication_year": 1951, "price": 19.99},
+    {
+      "book_id": 2, "title": "To Kill a Mockingbird", "author_id": 2, "genre": "Fiction", "publication_year": 1960, "price": 24.99},
+    {
+      "book_id": 3, "title": "1984", "author_id": 3, "genre": "Dystopian", "publication_year": 1949, "price": 14.99},
+    {
+      "book_id": 4, "title": "Pride and Prejudice", "author_id": 4, "genre": "Romance", "publication_year": 1813, "price": 12.99},
+    {
+      "book_id": 5, "title": "The Great Gatsby", "author_id": 5, "genre": "Fiction", "publication_year": 1925, "price": 18.99}
+  ]
+}
