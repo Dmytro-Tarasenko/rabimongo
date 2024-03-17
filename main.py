@@ -1,3 +1,4 @@
-import src.models
+from src.models import create_models
 
-print('Start connection')
+if __name__ == '__main__':
+    create_models()

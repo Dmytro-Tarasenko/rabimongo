@@ -1,26 +1,5 @@
-# CREATE TABLE authors (
-#     author_id INT PRIMARY KEY,
-#     author_name VARCHAR(50)
-# );
-
-# CREATE TABLE books (
-#     book_id INT PRIMARY KEY,
-#     title VARCHAR(100),
-#     author_id INT,
-#     genre VARCHAR(50),
-#     publication_year INT,
-#     price DECIMAL(10, 2),
-#     FOREIGN KEY (author_id) REFERENCES authors(author_id)
-# );
-from sqlalchemy.orm import declarative_base
-from sqlalchemy import Column, Integer, String, DECIMAL, ForeignKey, create_engine
-from sqlalchemy.orm import relationship, sessionmaker, Mapped, DeclarativeBase
-
-from sqlalchemy import Integer, String, ForeignKey
-from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
-
+from sqlalchemy import String, ForeignKey, create_engine
+from sqlalchemy.orm import Mapped, DeclarativeBase, mapped_column, relationship, sessionmaker
 from typing import List
 
 
@@ -50,11 +29,10 @@ class Book(Base):
     price: Mapped[float]
     author_id: Mapped[int] = mapped_column(ForeignKey("authors.author_id"))
 
+def create_models():
+    engine = create_engine("sqlite:///authors_books.sqlite")
 
-engine = create_engine("sqlite:///authors_books.sqlite")
-
-Base.metadata.create_all(engine)
-Base.metadata.bind = engine
-Session = sessionmaker(bind=engine)
-session = Session()
-print("Session created")
+    Base.metadata.create_all(engine)
+    Base.metadata.bind = engine
+    # Session = sessionmaker(bind=engine)
+    # session = Session()
