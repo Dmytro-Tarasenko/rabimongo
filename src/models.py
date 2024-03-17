@@ -17,6 +17,9 @@ class Author(Base):
 
     books: Mapped[List["Book"]] = relationship()
 
+    def __repr__(self) -> str:
+        return f'Author({self.author_id}, {self.author_name})'
+
 
 
 class Book(Base):
@@ -28,6 +31,10 @@ class Book(Base):
     publication_year: Mapped[int]
     price: Mapped[float]
     author_id: Mapped[int] = mapped_column(ForeignKey("authors.author_id"))
+
+    def __repr__(self) -> str:
+        return f'Books({self.title})'
+
 
 def create_models():
     engine = create_engine("sqlite:///authors_books.sqlite")
